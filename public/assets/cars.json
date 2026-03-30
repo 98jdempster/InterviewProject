@@ -1,0 +1,702 @@
+[
+  {
+    "make": "Chevrolet",
+    "model": "Malibu",
+    "color": "Burgundy",
+    "condition": "Excellent",
+    "price": 31100
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Traverse",
+    "color": "Graphite",
+    "condition": "Excellent",
+    "price": 49700
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Silver",
+    "condition": "Excellent",
+    "price": 38600
+  },
+  {
+    "make": "GMC",
+    "model": "Sierra",
+    "color": "Graphite",
+    "condition": "Excellent",
+    "price": 67700
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "color": "Orange",
+    "condition": "Good",
+    "price": 29300
+  },
+  {
+    "make": "Subaru",
+    "model": "Ascent",
+    "color": "Champagne",
+    "condition": "Good",
+    "price": 24700
+  },
+  {
+    "make": "Hyundai",
+    "model": "Ioniq 5",
+    "color": "Pearl White",
+    "condition": "Excellent",
+    "price": 32400
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "color": "Midnight Blue",
+    "condition": "Good",
+    "price": 21100
+  },
+  {
+    "make": "Jeep",
+    "model": "Gladiator",
+    "color": "Gray",
+    "condition": "Poor",
+    "price": 26400
+  },
+  {
+    "make": "Ford",
+    "model": "Bronco",
+    "color": "Charcoal",
+    "condition": "Fair",
+    "price": 32400
+  },
+  {
+    "make": "Porsche",
+    "model": "Cayenne",
+    "color": "Silver",
+    "condition": "Excellent",
+    "price": 76900
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Jetta",
+    "color": "Navy",
+    "condition": "Fair",
+    "price": 23400
+  },
+  {
+    "make": "Mazda",
+    "model": "CX-30",
+    "color": "Midnight Blue",
+    "condition": "Excellent",
+    "price": 35600
+  },
+  {
+    "make": "Hyundai",
+    "model": "Palisade",
+    "color": "Burgundy",
+    "condition": "Fair",
+    "price": 28800
+  },
+  {
+    "make": "Ford",
+    "model": "Bronco",
+    "color": "Blue",
+    "condition": "Good",
+    "price": 34000
+  },
+  {
+    "make": "Subaru",
+    "model": "WRX",
+    "color": "Bronze",
+    "condition": "Excellent",
+    "price": 31200
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "color": "Navy",
+    "condition": "Fair",
+    "price": 20600
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "GLC",
+    "color": "Silver",
+    "condition": "Excellent",
+    "price": 75200
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "color": "Dark Green",
+    "condition": "Good",
+    "price": 34900
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "color": "Burgundy",
+    "condition": "Excellent",
+    "price": 45200
+  },
+  {
+    "make": "Porsche",
+    "model": "Taycan",
+    "color": "Bronze",
+    "condition": "Good",
+    "price": 60400
+  },
+  {
+    "make": "Lexus",
+    "model": "IS",
+    "color": "Silver",
+    "condition": "Fair",
+    "price": 30700
+  },
+  {
+    "make": "BMW",
+    "model": "X1",
+    "color": "Blue",
+    "condition": "Fair",
+    "price": 43300
+  },
+  {
+    "make": "GMC",
+    "model": "Sierra",
+    "color": "Bronze",
+    "condition": "Good",
+    "price": 53300
+  },
+  {
+    "make": "Lexus",
+    "model": "NX",
+    "color": "Graphite",
+    "condition": "Fair",
+    "price": 26400
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Traverse",
+    "color": "Graphite",
+    "condition": "Fair",
+    "price": 30100
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "color": "Champagne",
+    "condition": "Excellent",
+    "price": 22200
+  },
+  {
+    "make": "Mazda",
+    "model": "MX-5 Miata",
+    "color": "Blue",
+    "condition": "Good",
+    "price": 23400
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Taos",
+    "color": "Ice Blue",
+    "condition": "Good",
+    "price": 23000
+  },
+  {
+    "make": "Kia",
+    "model": "K5",
+    "color": "Blue",
+    "condition": "Good",
+    "price": 38700
+  },
+  {
+    "make": "Lexus",
+    "model": "RX",
+    "color": "Pearl White",
+    "condition": "Good",
+    "price": 38500
+  },
+  {
+    "make": "Kia",
+    "model": "K5",
+    "color": "Charcoal",
+    "condition": "Excellent",
+    "price": 27900
+  },
+  {
+    "make": "Porsche",
+    "model": "911",
+    "color": "Silver",
+    "condition": "Fair",
+    "price": 78500
+  },
+  {
+    "make": "Ford",
+    "model": "Edge",
+    "color": "Graphite",
+    "condition": "Fair",
+    "price": 22000
+  },
+  {
+    "make": "Ram",
+    "model": "ProMaster",
+    "color": "Blue",
+    "condition": "Excellent",
+    "price": 61700
+  },
+  {
+    "make": "Hyundai",
+    "model": "Kona",
+    "color": "Green",
+    "condition": "Fair",
+    "price": 22500
+  },
+  {
+    "make": "Kia",
+    "model": "Seltos",
+    "color": "Ice Blue",
+    "condition": "Good",
+    "price": 23900
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "color": "Pearl White",
+    "condition": "Excellent",
+    "price": 74300
+  },
+  {
+    "make": "Tesla",
+    "model": "Model Y",
+    "color": "Black",
+    "condition": "Excellent",
+    "price": 79400
+  },
+  {
+    "make": "Honda",
+    "model": "Accord",
+    "color": "Silver",
+    "condition": "Poor",
+    "price": 16400
+  },
+  {
+    "make": "Ford",
+    "model": "Bronco",
+    "color": "Navy",
+    "condition": "Excellent",
+    "price": 55800
+  },
+  {
+    "make": "Hyundai",
+    "model": "Kona",
+    "color": "Red",
+    "condition": "Fair",
+    "price": 33300
+  },
+  {
+    "make": "Porsche",
+    "model": "Taycan",
+    "color": "Navy",
+    "condition": "Fair",
+    "price": 78100
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "color": "Gray",
+    "condition": "Excellent",
+    "price": 62200
+  },
+  {
+    "make": "Kia",
+    "model": "Seltos",
+    "color": "Champagne",
+    "condition": "Good",
+    "price": 37300
+  },
+  {
+    "make": "Honda",
+    "model": "Ridgeline",
+    "color": "Gray",
+    "condition": "Excellent",
+    "price": 45900
+  },
+  {
+    "make": "Nissan",
+    "model": "Altima",
+    "color": "Navy",
+    "condition": "Excellent",
+    "price": 37600
+  },
+  {
+    "make": "Jeep",
+    "model": "Grand Cherokee",
+    "color": "Champagne",
+    "condition": "Excellent",
+    "price": 58300
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "color": "Orange",
+    "condition": "Fair",
+    "price": 64000
+  },
+  {
+    "make": "Volvo",
+    "model": "XC60",
+    "color": "White",
+    "condition": "Good",
+    "price": 29700
+  },
+  {
+    "make": "Ford",
+    "model": "Edge",
+    "color": "Navy",
+    "condition": "Excellent",
+    "price": 55800
+  },
+  {
+    "make": "Ram",
+    "model": "1500",
+    "color": "Bronze",
+    "condition": "Poor",
+    "price": 22400
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "color": "Bronze",
+    "condition": "Excellent",
+    "price": 89400
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "color": "Champagne",
+    "condition": "Good",
+    "price": 50900
+  },
+  {
+    "make": "BMW",
+    "model": "5 Series",
+    "color": "Charcoal",
+    "condition": "Excellent",
+    "price": 39800
+  },
+  {
+    "make": "Porsche",
+    "model": "911",
+    "color": "Pearl White",
+    "condition": "Excellent",
+    "price": 100300
+  },
+  {
+    "make": "Ram",
+    "model": "ProMaster",
+    "color": "Ice Blue",
+    "condition": "Excellent",
+    "price": 67300
+  },
+  {
+    "make": "Ford",
+    "model": "Edge",
+    "color": "Blue",
+    "condition": "Excellent",
+    "price": 28500
+  },
+  {
+    "make": "Tesla",
+    "model": "Model X",
+    "color": "Gray",
+    "condition": "Poor",
+    "price": 37700
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "color": "Silver",
+    "condition": "Good",
+    "price": 64800
+  },
+  {
+    "make": "Porsche",
+    "model": "Macan",
+    "color": "Burgundy",
+    "condition": "Excellent",
+    "price": 108900
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "color": "Burgundy",
+    "condition": "Good",
+    "price": 35700
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Golf GTI",
+    "color": "Pearl White",
+    "condition": "Poor",
+    "price": 12200
+  },
+  {
+    "make": "Toyota",
+    "model": "Tundra",
+    "color": "Gray",
+    "condition": "Excellent",
+    "price": 29000
+  },
+  {
+    "make": "Lexus",
+    "model": "NX",
+    "color": "Red",
+    "condition": "Poor",
+    "price": 21300
+  },
+  {
+    "make": "Tesla",
+    "model": "Model S",
+    "color": "Charcoal",
+    "condition": "Excellent",
+    "price": 92600
+  },
+  {
+    "make": "Volvo",
+    "model": "S60",
+    "color": "Ice Blue",
+    "condition": "Excellent",
+    "price": 53600
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Silverado",
+    "color": "Burgundy",
+    "condition": "Excellent",
+    "price": 29000
+  },
+  {
+    "make": "Volvo",
+    "model": "XC90",
+    "color": "Burgundy",
+    "condition": "Excellent",
+    "price": 47800
+  },
+  {
+    "make": "Nissan",
+    "model": "Rogue",
+    "color": "Burgundy",
+    "condition": "Good",
+    "price": 24000
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Champagne",
+    "condition": "Fair",
+    "price": 15900
+  },
+  {
+    "make": "Toyota",
+    "model": "Prius",
+    "color": "Red",
+    "condition": "Good",
+    "price": 26000
+  },
+  {
+    "make": "Subaru",
+    "model": "Ascent",
+    "color": "Orange",
+    "condition": "Good",
+    "price": 32300
+  },
+  {
+    "make": "Volvo",
+    "model": "XC60",
+    "color": "Gray",
+    "condition": "Excellent",
+    "price": 43800
+  },
+  {
+    "make": "Volvo",
+    "model": "XC60",
+    "color": "Midnight Blue",
+    "condition": "Good",
+    "price": 37100
+  },
+  {
+    "make": "Audi",
+    "model": "Q5",
+    "color": "White",
+    "condition": "Good",
+    "price": 31100
+  },
+  {
+    "make": "Kia",
+    "model": "Sportage",
+    "color": "Navy",
+    "condition": "Good",
+    "price": 26900
+  },
+  {
+    "make": "Volvo",
+    "model": "V60",
+    "color": "Red",
+    "condition": "Poor",
+    "price": 24800
+  },
+  {
+    "make": "Subaru",
+    "model": "Forester",
+    "color": "Champagne",
+    "condition": "Excellent",
+    "price": 34900
+  },
+  {
+    "make": "Audi",
+    "model": "A3",
+    "color": "Navy",
+    "condition": "Excellent",
+    "price": 41100
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "color": "Dark Green",
+    "condition": "Excellent",
+    "price": 91500
+  },
+  {
+    "make": "Jeep",
+    "model": "Cherokee",
+    "color": "Charcoal",
+    "condition": "Fair",
+    "price": 29200
+  },
+  {
+    "make": "Tesla",
+    "model": "Model 3",
+    "color": "Green",
+    "condition": "Good",
+    "price": 47800
+  },
+  {
+    "make": "Ford",
+    "model": "Edge",
+    "color": "Burgundy",
+    "condition": "Good",
+    "price": 48800
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "S-Class",
+    "color": "Graphite",
+    "condition": "Good",
+    "price": 33800
+  },
+  {
+    "make": "Chevrolet",
+    "model": "Equinox",
+    "color": "Blue",
+    "condition": "Good",
+    "price": 33500
+  },
+  {
+    "make": "Honda",
+    "model": "Civic",
+    "color": "Champagne",
+    "condition": "Good",
+    "price": 40600
+  },
+  {
+    "make": "Nissan",
+    "model": "Pathfinder",
+    "color": "Ice Blue",
+    "condition": "Excellent",
+    "price": 38900
+  },
+  {
+    "make": "Hyundai",
+    "model": "Santa Fe",
+    "color": "White",
+    "condition": "Fair",
+    "price": 13600
+  },
+  {
+    "make": "Lexus",
+    "model": "GX",
+    "color": "Green",
+    "condition": "Good",
+    "price": 36200
+  },
+  {
+    "make": "Nissan",
+    "model": "Frontier",
+    "color": "Pearl White",
+    "condition": "Good",
+    "price": 20500
+  },
+  {
+    "make": "Volkswagen",
+    "model": "ID.4",
+    "color": "Charcoal",
+    "condition": "Good",
+    "price": 27800
+  },
+  {
+    "make": "Mercedes-Benz",
+    "model": "S-Class",
+    "color": "Charcoal",
+    "condition": "Good",
+    "price": 43000
+  },
+  {
+    "make": "Audi",
+    "model": "A3",
+    "color": "Bronze",
+    "condition": "Good",
+    "price": 38600
+  },
+  {
+    "make": "GMC",
+    "model": "Acadia",
+    "color": "Bronze",
+    "condition": "Good",
+    "price": 27200
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Atlas",
+    "color": "Green",
+    "condition": "Good",
+    "price": 34900
+  },
+  {
+    "make": "GMC",
+    "model": "Acadia",
+    "color": "Orange",
+    "condition": "Good",
+    "price": 39100
+  },
+  {
+    "make": "Lexus",
+    "model": "IS",
+    "color": "Blue",
+    "condition": "Good",
+    "price": 48100
+  },
+  {
+    "make": "Lexus",
+    "model": "GX",
+    "color": "Pearl White",
+    "condition": "Excellent",
+    "price": 53400
+  },
+  {
+    "make": "Volkswagen",
+    "model": "Tiguan",
+    "color": "Green",
+    "condition": "Excellent",
+    "price": 23500
+  }
+]

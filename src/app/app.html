@@ -1,0 +1,199 @@
+<div class="app-layout" [class.sidebar-closed]="!sidebarOpen">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <h1>AutoVault</h1>
+      <div class="tagline">Inventory Search</div>
+    </div>
+
+    <div class="search-box">
+      <input type="text" placeholder="Search make, model, color…"
+             [(ngModel)]="searchQuery" (ngModelChange)="onSearchChange()" autocomplete="off">
+    </div>
+
+    <!-- Price -->
+    <div class="facet-group">
+      <div class="facet-header">
+        <span class="facet-label">Price Range</span>
+      </div>
+      <div class="facet-body">
+        <div class="price-display">
+          {{ formatPrice(priceMin) }} — {{ formatPrice(priceMax) }}
+        </div>
+        <div class="price-inputs">
+          <div class="price-field">
+            <label>Min ($)</label>
+            <input type="number" [(ngModel)]="priceMin" (change)="applyPrice()" [step]="1000">
+          </div>
+          <div class="price-field">
+            <label>Max ($)</label>
+            <input type="number" [(ngModel)]="priceMax" (change)="applyPrice()" [step]="1000">
+          </div>
+        </div>
+        <button class="clear-link" *ngIf="priceActive" (click)="clearPrice()">Clear price filter</button>
+      </div>
+    </div>
+
+    <!-- Facets -->
+    <div class="facet-group" *ngFor="let facet of facets">
+      <button class="facet-header" (click)="toggleFacet(facet)">
+        <span class="facet-label">{{ facet.label }}</span>
+        <span class="selected-badge" *ngIf="selectedCount(facet) > 0">{{ selectedCount(facet) }}</span>
+        <span class="chevron" [class.open]="facet.expanded">▾</span>
+      </button>
+      <div class="facet-body" *ngIf="facet.expanded">
+        <!-- Facet search input (only for facets with many options) -->
+        <div class="facet-search" *ngIf="facet.showSearch">
+          <input type="text"
+                 [placeholder]="'Search ' + facet.label.toLowerCase() + '…'"
+                 [(ngModel)]="facet.searchQuery"
+                 (ngModelChange)="onFacetSearchChange(facet)"
+                 autocomplete="off">
+        </div>
+
+        <div class="facet-options-list">
+          <label class="facet-option" *ngFor="let opt of getFilteredFacetOptions(facet)"
+                 [class.active]="opt.selected"
+                 (click)="toggleFilter(facet.key, opt.value); $event.preventDefault()">
+            <span class="facet-check">
+              <svg viewBox="0 0 12 12"><polyline points="2 6 5 9 10 3" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span class="color-dot" *ngIf="facet.key === 'color'"
+                  [style.background]="getColorSwatch(opt.value)"
+                  [class.light-dot]="isLightColor(opt.value)"></span>
+            <span class="opt-name">{{ opt.value }}</span>
+            <span class="opt-count">{{ opt.count }}</span>
+          </label>
+          <div class="facet-no-results" *ngIf="getFilteredFacetOptions(facet).length === 0">
+            No matches
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-footer">
+      <button class="clear-all-btn" (click)="clearAll()">Clear All Filters</button>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main-content">
+    <header class="toolbar">
+      <div class="toolbar-left">
+        <button class="sidebar-toggle" (click)="toggleSidebar()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+        <span class="result-count">{{ filteredCars.length }}</span>
+        <span class="result-label">vehicles</span>
+      </div>
+      <div class="sort-wrapper">
+        <label>Sort</label>
+        <select (change)="onSortChange($event)">
+          <option value="price:asc">Price: Low → High</option>
+          <option value="price:desc">Price: High → Low</option>
+          <option value="make:asc">Make: A–Z</option>
+          <option value="make:desc">Make: Z–A</option>
+          <option value="condition:asc">Condition: Best</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Active chips -->
+    <div class="chips-bar" *ngIf="hasActiveFilters()">
+      <span class="chip" *ngFor="let chip of getActiveChips()" (click)="removeChip(chip.key, chip.value)">
+        <span class="chip-cat">{{ chip.label }}:</span>
+        <span class="chip-val">{{ chip.value }}</span>
+        <span class="chip-x">×</span>
+      </span>
+      <button class="clear-chips" (click)="clearAll()">Clear all</button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-wrap">
+      <table *ngIf="filteredCars.length > 0">
+        <thead>
+          <tr>
+            <th [class.sorted]="sortKey === 'make'" (click)="onColumnSort('make')">
+              Make <span class="sort-arrow">{{ sortArrow('make') }}</span>
+            </th>
+            <th [class.sorted]="sortKey === 'model'" (click)="onColumnSort('model')">
+              Model <span class="sort-arrow">{{ sortArrow('model') }}</span>
+            </th>
+            <th [class.sorted]="sortKey === 'color'" (click)="onColumnSort('color')">
+              Color <span class="sort-arrow">{{ sortArrow('color') }}</span>
+            </th>
+            <th [class.sorted]="sortKey === 'condition'" (click)="onColumnSort('condition')">
+              Condition <span class="sort-arrow">{{ sortArrow('condition') }}</span>
+            </th>
+            <th [class.sorted]="sortKey === 'price'" (click)="onColumnSort('price')">
+              Price <span class="sort-arrow">{{ sortArrow('price') }}</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of paginatedCars">
+            <td class="col-make">{{ car.make }}</td>
+            <td class="col-model">{{ car.model }}</td>
+            <td class="col-color">
+              <span class="color-dot"
+                    [style.background]="getColorSwatch(car.color)"
+                    [class.light-dot]="isLightColor(car.color)"></span>
+              {{ car.color }}
+            </td>
+            <td>
+              <span class="condition-pill" [ngClass]="condClass(car.condition)">{{ car.condition }}</span>
+            </td>
+            <td class="col-price">{{ formatPrice(car.price) }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Pagination -->
+      <div class="pagination" *ngIf="filteredCars.length > 0">
+        <div class="page-info">
+          Showing {{ paginationStart }}–{{ paginationEnd }} of {{ filteredCars.length }}
+        </div>
+
+        <div class="page-controls">
+          <button class="page-btn"
+                  [disabled]="currentPage === 1"
+                  (click)="goToPage(1)" title="First page">«</button>
+          <button class="page-btn"
+                  [disabled]="currentPage === 1"
+                  (click)="goToPage(currentPage - 1)" title="Previous page">‹</button>
+
+          <button *ngFor="let p of getPageNumbers()"
+                  class="page-btn page-num"
+                  [class.active]="p === currentPage"
+                  (click)="goToPage(p)">{{ p }}</button>
+
+          <button class="page-btn"
+                  [disabled]="currentPage === totalPages"
+                  (click)="goToPage(currentPage + 1)" title="Next page">›</button>
+          <button class="page-btn"
+                  [disabled]="currentPage === totalPages"
+                  (click)="goToPage(totalPages)" title="Last page">»</button>
+        </div>
+
+        <div class="page-size">
+          <label>Per page</label>
+          <select (change)="onPageSizeChange($event)">
+            <option *ngFor="let size of pageSizeOptions" [value]="size" [selected]="size === pageSize">{{ size }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="empty-state" *ngIf="filteredCars.length === 0 && allCars.length > 0">
+        <h3>No cars match your filters</h3>
+        <p>Try adjusting or clearing some filters.</p>
+      </div>
+
+      <div class="empty-state" *ngIf="allCars.length === 0">
+        <h3>Loading…</h3>
+      </div>
+    </div>
+  </main>
+</div>

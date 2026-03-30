@@ -1,0 +1,55 @@
+:root {
+  /* ── Dark Slate throughout — matches sidebar ── */
+  --bg: #151c24;
+  --surface: #1b2733;
+  --surface-alt: #212e3a;
+  --border: rgba(255,255,255,0.08);
+  --border-strong: rgba(255,255,255,0.12);
+  --hover: rgba(62, 201, 201, 0.04);
+  --input-bg: rgba(255,255,255,0.07);
+
+  --text-primary: #eef1f4;
+  --text-secondary: #c8d1da;
+  --text-tertiary: #6b7d8e;
+
+  --accent: #3ec9c9;
+  --accent-hover: #33b0b0;
+  --accent-light: rgba(62, 201, 201, 0.1);
+  --accent-glow: rgba(62, 201, 201, 0.15);
+  --accent-chip-border: rgba(62, 201, 201, 0.25);
+
+  /* Condition colors — adjusted for dark bg */
+  --cond-excellent-bg: rgba(46, 160, 100, 0.15);
+  --cond-excellent-text: #4dd89a;
+  --cond-good-bg: rgba(70, 140, 220, 0.15);
+  --cond-good-text: #6aafed;
+  --cond-fair-bg: rgba(220, 170, 50, 0.15);
+  --cond-fair-text: #e0b84a;
+  --cond-poor-bg: rgba(220, 80, 80, 0.15);
+  --cond-poor-text: #e86464;
+
+  /* Sidebar — slightly darker shade for distinction */
+  --sidebar-bg: #131a22;
+  --sidebar-surface: rgba(255,255,255,0.05);
+  --sidebar-border: rgba(255,255,255,0.07);
+  --sidebar-text: #c8d1da;
+  --sidebar-text-dim: #5a6d7e;
+  --sidebar-text-bright: #eef1f4;
+  --sidebar-input-bg: rgba(255,255,255,0.06);
+  --sidebar-accent: #3ec9c9;
+  --sidebar-check-bg: #2a8f8f;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+input, select, button { font-family: inherit; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
