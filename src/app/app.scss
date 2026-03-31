@@ -220,6 +220,19 @@
 .result-count { font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: var(--text-primary); }
 .result-label { font-size: 14px; color: var(--text-tertiary); }
 
+.toolbar-user {
+  display: flex; align-items: center; gap: 12px; margin-left: auto;
+  .toolbar-username {
+    font-size: 13px; font-weight: 600; color: var(--text-secondary);
+  }
+}
+.logout-btn {
+  padding: 7px 14px; border: 1px solid var(--border-strong); border-radius: 8px;
+  background: var(--surface-alt); color: var(--text-secondary);
+  font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.15s;
+  &:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-light); }
+}
+
 .sort-wrapper {
   display: flex; align-items: center; gap: 8px;
   label { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-tertiary); }

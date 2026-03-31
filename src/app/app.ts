@@ -1,7 +1,9 @@
-import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { AuthService } from './auth/auth.service';
 
 interface Car {
   make: string;
@@ -101,7 +103,7 @@ function sanitizeNumber(value: any, fallback: number, min: number, max: number):
 }
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-search',
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './app.html',
@@ -151,12 +153,12 @@ export class App implements OnInit {
     { key: 'model', label: 'Model' },
   ];
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private auth: AuthService) {
     this.facetKeys.forEach(f => this.selectedFilters.set(f.key, new Set()));
   }
 
   ngOnInit(): void {
-    this.http.get<Car[]>('/assets/cars.json').subscribe({
+    this.http.get<Car[]>('/api/cars', { headers: this.auth.getAuthHeaders() }).subscribe({
       next: (cars) => {
         this.allCars = cars;
         const prices = cars.map(c => c.price);
@@ -166,9 +168,15 @@ export class App implements OnInit {
         this.priceMax = this.absMax;
         this.update();
       },
-      error: (err) => console.error('Failed to load cars.json:', err),
+      error: (err) => {
+        if (err.status === 401) this.auth.logout();
+        else console.error('Failed to load cars:', err);
+      },
     });
   }
+
+  logout(): void { this.auth.logout(); }
+  getUsername(): string | null { return this.auth.getUsername(); }
 
   // ══════════════════════════════════
   // Core update

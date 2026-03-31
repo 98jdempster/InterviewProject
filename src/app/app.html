@@ -99,6 +99,10 @@
           <option value="condition:asc">Condition: Best</option>
         </select>
       </div>
+      <div class="toolbar-user">
+        <span class="toolbar-username">{{ getUsername() }}</span>
+        <button class="logout-btn" (click)="logout()">Sign Out</button>
+      </div>
     </header>
 
     <!-- Active chips -->
